@@ -2,6 +2,8 @@ import Image, { type ImageProps } from "next/image";
 import { Button } from "@repo/ui/button";
 import styles from "./page.module.css";
 
+import { formatDate } from "@myapp/utils";
+
 type Props = Omit<ImageProps, "src"> & {
   srcLight: string;
   srcDark: string;
@@ -31,6 +33,7 @@ export default function Home() {
           height={38}
           priority
         />
+        <p>{formatDate (new Date()) }</p>
         <ol>
           <li>
             Get started by editing <code>apps/web/app/page.tsx</code>
